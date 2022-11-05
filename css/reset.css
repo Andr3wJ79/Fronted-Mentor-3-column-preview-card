@@ -1,130 +1,69 @@
-* {
-  margin: 0;
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
 body {
-  font-family: "Montserrat";
-  background-color: var(--Cream);
+  height: 100%;
 }
-
-:root {
-  --Dark-cyan: hsl(158, 36%, 37%);
-  --Cream: hsl(30, 38%, 92%);
-  --Very-dark-blue: hsl(212, 21%, 14%);
-  --Dark-grayish-blue: hsl(228, 12%, 48%);
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
-
-.content_main {
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 95% 5%;
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
-
-.landpage {
-  box-shadow: 0px 0px 10px 0.1px rgba(0, 0, 0, 0.1);
-  margin: auto;
-  width: 40%;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  background-color: white;
-  border-radius: 10px;
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
-
-.content_text {
-  display: flex;
-  flex-direction: column;
-  padding: 5px 30px;
-  justify-content: space-evenly;
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
-
-.fragance {
-  color: var(--Dark-grayish-blue);
-  letter-spacing: 4px;
-  font-size: 12px;
-  font-weight: 100;
-}
-
-.text {
-  font-size: 14px;
-  line-height: 22px;
-  color: var(--Dark-grayish-blue);
-}
-
-.content_text h1 {
-  font-family: "Fraunces";
-  line-height: 33px;
-  font-size: 35px;
-  font-weight: 900;
-}
-
-.product {
-  width: 100%;
-  border-radius: 10px 0 0 10px;
-}
-
-.price {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  align-items: center;
-}
-
-.price_now {
-  color: var(--Dark-cyan);
-  font-size: 30px;
-  font-family: "Fraunces";
-  font-weight: 900;
-}
-
-.price_after {
-  font-size: 14px;
-  text-decoration: line-through;
-  color: var(--Dark-grayish-blue);
-}
-
-.button_buy {
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  background-color: var(--Dark-cyan);
-  height: 45px;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  color: white;
-  font-weight: 800;
-}
-
-.button_buy img {
-  padding-right: 10px;
-}
-.button_buy:hover {
-  background-color: hsl(159, 39%, 21%);
-}
-@media (max-width: 375px) {
-  .content_main {
-    height: 800px;
-  }
-  .landpage {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-  }
-  .content_text {
-    height: 340px;
-    padding: 20px;
-  }
-  .content_text h1 {
-    font-size: 30px;
-  }
-  .price {
-    grid-template-columns: 45% 20%;
-  }
-  .product {
-    border-radius: 10px 10px 0 0;
-  }
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
 }
