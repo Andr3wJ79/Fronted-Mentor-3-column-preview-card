@@ -21,6 +21,7 @@ body {
   align-items: center;
   justify-items: center;
 }
+
 main {
   display: grid;
   position: relative;
