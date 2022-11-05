@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+
+  /*paragraphs*/
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  /*background, headings, buttons*/
+  --very-light-gray: hsl(0, 0%, 95%);
+}
+
+body {
+  background: var(--very-light-gray);
+  display: grid;
+  height: 100vh;
+  align-items: center;
+  justify-items: center;
+}
+main {
+  display: grid;
+  position: relative;
+  grid-template-columns: auto auto auto;
+  max-width: 920px;
+  height: 500px;
+  overflow: auto;
+}
+
+p,
+h2 {
+  color: var(--transparent-white);
+}
+
+p,
+a {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+}
+
+h2 {
+  font-family: "Big Shoulders Display", cursive;
+  text-transform: uppercase;
+  font-size: 2.6rem;
+  font-weight: 700;
+
+  /*padding-top: 40px;
+  padding-bottom: 40px;*/
+}
+
+p {
+}
+
+section {
+  padding: 48px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 4.5em 4.5em auto 4.5em;
+}
+
+.sedans {
+  background: var(--bright-orange);
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+.suvs {
+  background: var(--dark-cyan);
+}
+
+.luxury {
+  background: var(--Very-dark-cyan);
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.button {
+  position: absolute;
+  bottom: 48px;
+}
+
+a {
+  vertical-align: bottom;
+  background: var(--very-light-gray);
+  color: #000;
+  padding: 0.7em 2em;
+  border-radius: 2em;
+  border: 3px solid transparent;
+  text-decoration: none;
+  mix-blend-mode: screen;
+}
+
+a:hover {
+  background: transparent;
+  color: var(--very-light-gray);
+  border-color: var(--very-light-gray);
+}
+
+@media only screen and (max-width: 400px) {
+  main {
+    grid-template-columns: 1fr;
+    max-width: 327px;
+    height: 1502px;
+    grid-template-rows: auto;
+  }
+
+  section {
+    padding: 48px;
+    display: grid;
+    grid-template-rows: 4.5em 4.5em auto 0em;
+  }
+
+  .sedans {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 0;
+  }
+
+  .luxury {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+  }
+
+  .button {
+    position: relative;
+    bottom: 48px;
+  }
+}
