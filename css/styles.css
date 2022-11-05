@@ -17,7 +17,8 @@
 body {
   background: var(--very-light-gray);
   display: grid;
-  height: 100vh;
+  width: 1440px;
+  height: 800px;
   align-items: center;
   justify-items: center;
 }
